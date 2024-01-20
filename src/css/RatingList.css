@@ -1,0 +1,28 @@
+#rating_list{
+    width:100%;
+    border-collapse: collapse;
+
+}
+/*border: 1px solid #dddddd;*/
+.row:nth-child(odd){
+    background-color: #fcfcfc;
+}
+.row:nth-child(even){
+    background-color: #eaeaea;
+}
+td{
+    padding:5px;
+}
+/*border: 1px solid #b9b9b9;*/
+.row{
+}
+.row:hover{
+    background-color: #fff;
+    //border: 1px solid black;
+}
+#table_wrapper{
+    border:1px solid #a4a4a4;
+    padding:12px;
+    border-radius: 12px;
+    background-color: #fcfcfc;
+}

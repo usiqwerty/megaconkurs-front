@@ -1,0 +1,9 @@
+.root {
+  text-align: center;
+}
+.tile{
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: fit-content;
+}

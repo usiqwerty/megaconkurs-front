@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './css/App.css';
+import RatingListPage from "./pages/RatingListPage";
+import {Route, Routes} from "react-router-dom";
+import RatingList from "./widgets/RatingList";
+import Homepage from "./pages/Homepage";
+import VuzProgramsPage from "./pages/VuzProgramsPage";
+import VuzInfoPage from "./pages/VuzInfoPage";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+
+        <Routes>
+            <Route path={"/"} element={<Homepage />}/>
+            <Route path={"/vuz/:vuz"} element={<VuzInfoPage /> } />
+            <Route path={"/rating/:vuz"} element={<VuzProgramsPage /> } />
+            <Route path={"/rating/:vuz/:rating_id"} element={<RatingListPage/> } />
+            <Route path={"*"} element={ <span>Страница не найдена</span> } />
+        </Routes>
+    );
 }
 
 export default App;
