@@ -19,7 +19,7 @@ export function  get_full_rating(rating_id: string){
     return {vuz: "UrFU", code:rating_id, rating: rating};
 }
 export function get_all_vuzes(){
-    return ["UrFU"];
+    return ["UrFU", "AAA","BBB","CCC","DDDD","EEE"];
 }
 export function get_vuz_programs(vuz_name: string){
     if (vuz_name=="urfu")

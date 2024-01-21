@@ -10,9 +10,12 @@ function VuzProgramsPage() {
     return (
         <>
             <h1>Конкурсные списки для {vuz}</h1>
-            {programs.map((program)=>
-                <ProgramTile code={program} vuz_name={vuz} title={program}/>
-            )}
+            <div id={"tiles_container"}>
+                {programs.map((program)=>
+                    <ProgramTile code={program} vuz_name={vuz} title={program}/>
+                )}
+            </div>
+
         </>
     );
 }
