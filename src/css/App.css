@@ -22,8 +22,8 @@ a:hover {
     align-items: center;
     width: 80%;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .block {

@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/RatingList.css";
 import {rating_entry} from "../api";
+import {Link} from "react-router-dom";
 function RatingList({rating}:{rating: rating_entry[]}) {
     return (
         <div id={"table_wrapper"}>
@@ -23,7 +24,7 @@ function RatingList({rating}:{rating: rating_entry[]}) {
                 <td>{place.confirmed? "Да": "Нет"}</td>
                 <td>{place.bvi? "БВИ" : "Общий"}</td>
                 <td>
-                    <>{place.other.map((other)=><span><a>{other.code}: на {other.position} месте {other.confirmed? "(подтверждёт)":""}</a><br/></span>)}</>
+                    <>{place.other.map((other)=><span><Link to={"/rating/"+other.vuz+"/"+other.code}>{other.code}: на {other.position} месте {other.confirmed? "(подтверждёт)":""}</Link><br/></span>)}</>
                 </td>
             </tr>)}
 

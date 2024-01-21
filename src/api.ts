@@ -1,11 +1,11 @@
-export type ext_link= {code:string, position:number, confirmed:boolean};
+export type ext_link= {vuz: string, code:string, position:number, confirmed:boolean};
 export type rating_entry = {pos:number,
     snils:number, score:number[],
     confirmed:boolean, bvi:boolean,
     other:ext_link[]};
 export type vuz = {name:string, code:string};
 
-const other_link= {code:"01.02.03", position:4, confirmed:false};
+const other_link:ext_link= {vuz:"urfu", code:"01.02.02", position:4, confirmed:false};
 
 const rating: rating_entry[] = [
     {pos:1,snils:12345678900, score:[70,80,70], confirmed:true, bvi:true, other:[]},
@@ -16,7 +16,7 @@ const rating: rating_entry[] = [
     {pos:6,snils:12345678900, score:[60,60,60], confirmed:true, bvi:false, other:[other_link]},
 ];
 
-export function  get_full_rating(rating_id: string){
+export function  get_full_rating(vuz: string, rating_id: string){
     return {vuz: "UrFU", code:rating_id, rating: rating};
 }
 export function get_all_vuzes(): vuz[]{

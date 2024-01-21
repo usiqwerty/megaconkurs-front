@@ -13,7 +13,7 @@ function App() {
             <Route path={"/"} element={<Homepage />}/>
             <Route path={"/vuz/:vuz"} element={<VuzInfoPage /> } />
             <Route path={"/rating/:vuz"} element={<VuzProgramsPage /> } />
-            <Route path={"/rating/:vuz/:rating_id"} element={<RatingListPage/> } />
+            <Route path={"/rating/:vuz_code/:rating_id"} element={<RatingListPage/> } />
             <Route path={"*"} element={ <span>Страница не найдена</span> } />
         </Routes>
     );
