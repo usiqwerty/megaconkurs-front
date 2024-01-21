@@ -3,6 +3,7 @@ export type rating_entry = {pos:number,
     snils:number, score:number[],
     confirmed:boolean, bvi:boolean,
     other:ext_link[]};
+export type vuz = {name:string, code:string};
 
 const other_link= {code:"01.02.03", position:4, confirmed:false};
 
@@ -18,8 +19,14 @@ const rating: rating_entry[] = [
 export function  get_full_rating(rating_id: string){
     return {vuz: "UrFU", code:rating_id, rating: rating};
 }
-export function get_all_vuzes(){
-    return ["UrFU", "AAA","BBB","CCC","DDDD","EEE"];
+export function get_all_vuzes(): vuz[]{
+    return [{name:"УрФУ", code:"urfu"},
+        {name:"бубу", code:"bubu"},
+        {name:"ибиб", code:"ibib"},
+        {name:"биба", code:"biba"},
+        {name:"амогус", code:"amogus"},
+        {name:"сус", code:"sus"},
+        {name:"вуз", code:"vus"}];
 }
 export function get_vuz_programs(vuz_name: string){
     if (vuz_name=="urfu")
