@@ -1,40 +1,39 @@
-export type ext_link= {vuz: string, code:string, position:number, confirmed:boolean};
-export type rating_entry = {pos:number,
-    snils:number, score:number[],
-    confirmed:boolean, bvi:boolean,
-    other:ext_link[]};
-export type vuz = {name:string, code:string};
+const api_host = "http://127.0.0.1:5000";
+const api_url = api_host + "/api";
 
-const other_link:ext_link= {vuz:"urfu", code:"01.02.02", position:4, confirmed:false};
 
-const rating: rating_entry[] = [
-    {pos:1,snils:12345678900, score:[70,80,70], confirmed:true, bvi:true, other:[]},
-    {pos:2,snils:12345678900, score:[60,80,70], confirmed:true, bvi:false, other:[]},
-    {pos:3,snils:12345678900, score:[60,75,70], confirmed:false, bvi:false, other:[other_link]},
-    {pos:4,snils:12345678900, score:[60,70,70], confirmed:false, bvi:false, other:[other_link]},
-    {pos:5,snils:12345678900, score:[70,60,60], confirmed:false, bvi:false, other:[other_link, other_link]},
-    {pos:6,snils:12345678900, score:[60,60,60], confirmed:true, bvi:false, other:[other_link]},
-];
+export type ext_link = { vuz: string, code: string, position: number, confirmed: boolean };
+export type rating_entry = {
+    pos: number,
+    snils: number, score: number[],
+    confirmed: boolean, bvi: boolean,
+    other: ext_link[]
+};
+export type vuz = { name: string, code: string };
 
-export function  get_full_rating(vuz: string, rating_id: string){
-    return {vuz: "UrFU", code:rating_id, rating: rating};
+function api_call(url: string) {
+    return fetch(url,
+        {
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
 }
-export function get_all_vuzes(): vuz[]{
-    return [{name:"УрФУ", code:"urfu"},
-        {name:"бубу", code:"bubu"},
-        {name:"ибиб", code:"ibib"},
-        {name:"биба", code:"biba"},
-        {name:"амогус", code:"amogus"},
-        {name:"сус", code:"sus"},
-        {name:"вуз", code:"vus"}];
+
+export function get_all_vuzes() {
+    return api_call(api_url + "/get_all_vuzes");
 }
-export function get_vuz_programs(vuz_name: string){
-    if (vuz_name=="urfu")
-        return ["01.02.03"];
-    return [];
+
+export function get_vuz_programs(vuz_name: string) {
+    return api_call(api_url + "/get_vuz_programs?vuz=" + vuz_name);
+
 }
-export function get_vuz_info(vuz_name:string){
-    if (vuz_name=="urfu")
-        return {name:"Уральский Федеральный Университет"};
-    return null;
+
+export function get_vuz_info(vuz_name: string) {
+    return api_call(api_url + "/get_vuz_info?vuz=" + vuz_name);
+}
+
+export function get_full_rating(vuz: string, rating_id: string) {
+    return api_call(api_url + `/get_rating?vuz=${vuz}&rating_id=${rating_id}`);
 }

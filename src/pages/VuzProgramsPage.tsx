@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {get_all_vuzes} from "../api";
 import {get_vuz_programs} from "../api";
 import ProgramTile from "../widgets/ProgramTile";
 import {useParams} from "react-router-dom";
 function VuzProgramsPage() {
     const {vuz}= useParams();
+    const [programs, setPrograms] = useState([]);
+
+    useEffect(() => {
+        get_vuz_programs(vuz!).then((response)=>{
+            response.json().then((r)=>{setPrograms(r)});
+
+        })
+    }, []);
     if (!vuz) return <b>biba</b>;
-    const programs = get_vuz_programs(vuz);
+
+
     return (
         <>
             <h1>Конкурсные списки для {vuz}</h1>
