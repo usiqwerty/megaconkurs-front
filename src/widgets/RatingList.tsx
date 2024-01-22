@@ -2,6 +2,7 @@ import React from "react";
 import "../css/RatingList.css";
 import {rating_entry} from "../api";
 import {Link} from "react-router-dom";
+
 function RatingList({rating}:{rating: rating_entry[]}) {
     return (
         <div id={"table_wrapper"}>

@@ -12,9 +12,10 @@ function RatingListPage() {
 
     }, []);
     if (!data.rating)
-        return <span>Loading</span>
+        return <span>Загрузка...</span>
     return (
     <>
+
         <div>
             <span>{data.vuz} - program {data.code}</span>
         </div>

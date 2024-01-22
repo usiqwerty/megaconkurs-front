@@ -13,7 +13,7 @@ function VuzProgramsPage() {
 
         })
     }, []);
-    if (!vuz) return <b>biba</b>;
+    if (!vuz) return <><h1>Конкурсные списки</h1><div id={"tiles_container"}>Загрузка...</div></>;
 
 
     return (
@@ -21,7 +21,7 @@ function VuzProgramsPage() {
             <h1>Конкурсные списки для {vuz}</h1>
             <div id={"tiles_container"}>
                 {programs.map((program)=>
-                    <ProgramTile code={program} vuz_name={vuz} title={program}/>
+                    <ProgramTile code={program} vuz_name={vuz} title={program} key={program}/>
                 )}
             </div>
 
