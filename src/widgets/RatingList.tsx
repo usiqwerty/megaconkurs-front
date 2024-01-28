@@ -12,8 +12,7 @@ function RatingList({rating}:{rating: rating_entry[]}) {
                 <td className={"pos"}>№</td>
                 <td className={"snils"}>СНИЛС</td>
                 <td className={"subject_score"}>Предмет 1</td>
-                <td className={"subject_score"}>Предмет 2</td>
-                <td className={"subject_score"}>Предмет 3</td>
+
                 <td>Аттестат</td>
                 <td>Конкурс</td>
                 <td>На других специальностях</td>
@@ -21,7 +20,8 @@ function RatingList({rating}:{rating: rating_entry[]}) {
             {rating.map((place) => <tr className={"row"}>
                 <td className={"pos"}>{place.pos}</td>
                 <td className={"snils"}>{place.snils}</td>
-                {place.score.map((score)=><td className={"subject_score"}>{score}</td>)}
+                <td className={"subject_score"}>{place.score}</td>
+                {/*place.score.map((score)=>))*/}
                 <td>{place.confirmed? "Да": "Нет"}</td>
                 <td>{place.bvi? "БВИ" : "Общий"}</td>
                 <td>
