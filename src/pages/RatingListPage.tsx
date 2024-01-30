@@ -15,8 +15,7 @@ function RatingListPage() {
         return <span>Загрузка...</span>
     return (
     <>
-
-        <div>
+        <div className={"block"} id={"page-title-block"}>
             <span>{data.vuz} - program {data.code}</span>
         </div>
         <RatingList rating={data.rating}/>
