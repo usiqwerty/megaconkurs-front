@@ -9,8 +9,10 @@ function RatingListPage() {
 
     const [info, setInfo] = useState({} as vuz)
     useEffect(() => {
-        get_vuz_info(vuz!).then((response)=>{
-            response.json().then((r)=>{setInfo(r)});
+        get_vuz_info(vuz!).then((response) => {
+            response.json().then((r) => {
+                setInfo(r)
+            });
         });
     }, []);
     if (!vuz) return <b>biba</b>;
@@ -19,18 +21,16 @@ function RatingListPage() {
         return <span>Неверные данные</span>
     return (
         <>
-            <div>
-                <span>{info.name}</span>
-                <p>
-                    тыщ пыщ пыщ информация<br/>
-                    офигенный вуз<br/>
-                    какой он крутой<br/>
-                    хочу тут учиться<br/>
-                    не хочу тут учиться<br/>
-                </p>
+            <div className={"block header-block"}>
+                <div className={"header-block-item"}><img alt={"logo"}/></div>
+                <div className={"header-block-item"}>
+                    <h2>{info.name}</h2>
+                    <p>
+                        {info.desc}
+                    </p>
+                </div>
 
             </div>
-
         </>
     );
 }

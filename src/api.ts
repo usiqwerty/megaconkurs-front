@@ -9,7 +9,7 @@ export type rating_entry = {
     confirmed: boolean, bvi: boolean,
     other: ext_link[]
 };
-export type vuz = { name: string, code: string };
+export type vuz = { name: string, code: string, desc: string };
 
 function api_call(url: string) {
     return fetch(url,
