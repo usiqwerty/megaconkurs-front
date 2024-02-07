@@ -41,9 +41,9 @@ function RatingListPage() {
             </div>
             <div id={"tiles_container"}>
                 {vuz_attributes.map((vuz_attr) => {
-                    return <div className={"tile vuz-attribute"}>
+                    return <div className={"block vuz-attribute"}>
                         <div className={"attr-name"}>{vuz_attr.key}</div>
-                        <div className={"divider"}>{}</div>
+                        <div className={"divider"}></div>
                         <div className={"attr-value"}>{vuz_attr.val}</div>
                     </div>
 

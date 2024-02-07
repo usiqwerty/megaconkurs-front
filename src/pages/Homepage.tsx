@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {get_all_vuzes, vuz} from "../api";
 import VuzTile from "../widgets/VuzTile";
-
+import '../css/Homepage.css';
 function Homepage() {
     const [vuzes, setVuzes] = useState([] as vuz[])
     useEffect(() => {
@@ -11,7 +11,8 @@ function Homepage() {
     }, []);
     return (
         <>
-            <header><h1>Главная</h1></header>
+
+            <div id={"large-header"}><h1>Главная</h1></div>
 
 
             <div id={"tiles_container"}>

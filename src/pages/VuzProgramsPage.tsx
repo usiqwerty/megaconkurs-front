@@ -18,7 +18,9 @@ function VuzProgramsPage() {
 
     return (
         <>
-            <h1>Конкурсные списки для {vuz}</h1>
+            <div className={"block header-block"}>
+                <span>Конкурсные списки для {vuz}</span>
+            </div>
             <div id={"tiles_container"}>
                 {programs.map((program)=>
                     <ProgramTile code={program} vuz_name={vuz} title={program} key={program}/>
