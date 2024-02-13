@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 function ProgramTile({title, code, vuz_name}: { title: string, code: string, vuz_name: string }) {

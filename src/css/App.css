@@ -43,8 +43,11 @@ a:hover {
     grid-gap: 5px;
     grid-template-columns: 1fr 10fr;
     margin:10px;
+    font-size: 16pt;
 }
-
+#header-content{
+    width:max-content;
+}
 .header-block-item {
     display: grid;
 }

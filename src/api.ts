@@ -5,8 +5,10 @@ const api_url = api_host + "/api";
 export type ext_link = { vuz: string, code: string, position: number, confirmed: boolean };
 export type rating_entry = {
     pos: number,
-    snils: number, score: number[],
-    confirmed: boolean, bvi: boolean,
+    snils: number,
+    score: number,
+    confirmed: boolean,
+    bvi: boolean,
     other: ext_link[]
 };
 export type vuz = { name: string, code: string, desc: string };
