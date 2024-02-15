@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path={"/"} element={<Homepage/>}/>
-                <Route path={"/vuz/:vuz"} element={<VuzInfoPage/>}/>
+                <Route path={"/vuz/:vuz_code"} element={<VuzInfoPage/>}/>
                 <Route path={"/rating/:vuz"} element={<VuzProgramsPage/>}/>
                 <Route path={"/rating/:vuz_code/:rating_id"} element={<RatingListPage/>}/>
             </Routes>

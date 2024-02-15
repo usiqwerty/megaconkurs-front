@@ -3,7 +3,7 @@ import "../css/RatingList.css";
 import {rating_entry} from "../api";
 import {Link, NavLink} from "react-router-dom";
 
-function RatingList({rating, set_data}: { rating: rating_entry[], set_data: Function }) {
+function RatingList({rating}: { rating: rating_entry[]}) {
     function boolsum(array: boolean[]) {
         let count=0;
         array.map(

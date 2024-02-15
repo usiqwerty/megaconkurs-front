@@ -3,6 +3,7 @@ import {get_all_vuzes} from "../api";
 import {get_vuz_programs} from "../api";
 import ProgramTile from "../widgets/ProgramTile";
 import {useParams} from "react-router-dom";
+import {vuz_short_name} from "../code_translator";
 function VuzProgramsPage() {
     const {vuz}= useParams();
     const [programs, setPrograms] = useState([]);
@@ -19,7 +20,7 @@ function VuzProgramsPage() {
     return (
         <>
             <div className={"block header-block"}>
-                <span>Конкурсные списки для {vuz}</span>
+                <span id={"header-content"}>Конкурсные списки: {vuz_short_name(vuz)}</span>
             </div>
             <div id={"tiles_container"}>
                 {programs.map((program)=>

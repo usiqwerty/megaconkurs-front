@@ -1,4 +1,4 @@
-const api_host = "http://192.168.1.167:5000";
+const api_host = "http://127.0.0.1:5000";
 const api_url = api_host + "/api";
 
 
@@ -11,7 +11,9 @@ export type rating_entry = {
     bvi: boolean,
     other: ext_link[]
 };
-export type vuz = { name: string, code: string, desc: string };
+
+type attriute = {key: string, val: string|number}
+export type vuz = { name: string, code: string, desc: string, attributes: string };
 
 function api_call(url: string) {
     return fetch(url,
